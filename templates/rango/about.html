@@ -1,23 +1,17 @@
 <!DOCTYPE html>
-{% load staticfiles %} <!-- New line -->
-
-<html> <head>
-    <title>Rango</title> </head>
-<body>
-<h1>Rango says...</h1>
-'here is the about page.'
-<div>
-
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% block title_block %}
+  {% if about %}
+    {{About Rango. }}
+  {% else %}
     <strong>{{This tutorial has been put together by Teame Habtu}}</strong><br />
-</div>
-<div>
-    <a href="/rango/">Index</a><br />
+  {% endif %}
+  {% else %}
     <img src="{% static 'images/rango.jpg' %}"alt="Picture of Rango" />
-    <img src="{ { MEDIA_URL }}'cat.jpg' %}" alt="Picture of a Cat" /> <!-- New line -->
-</div>
- </body>
-</html>
-
-
+    <img src="{ { MEDIA_URL }}'cat.jpg' %}" alt="Picture of a Cat" />
+  {% endif %}
+  
+{% endblock %}
 
 
